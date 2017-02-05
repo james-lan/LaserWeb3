@@ -1,3 +1,4 @@
+
 function fillLayerTabs() {
   fillEasyCam();
 };
@@ -162,7 +163,7 @@ function fillEasyCam() {
             <div class="form-group">
               <label >Laser Power (0-100%)</label>
               <div class="input-group">
-              <input type="number" min="0" max="100" class="form-control input-sm" value="`+pwr+`" id="power`+i+`" objectseq="`+i+`">
+              <input type="number" min="0" max="100" class="form-control input-sm" value="1" id="power`+i+`" objectseq="`+i+`">
               <span class="input-group-addon">%</span>
             </div>
             <div class="form-group">
@@ -249,9 +250,10 @@ function fillEasyCam() {
 
             <div class="form-group">
               <label >Raster: Proportional Feedrate</label>
+              <BR />These should be the same, or there may be problems.
               <div class="input-group">
                 <span class="input-group-addon">Light</span>
-                <input type="number" class="form-control input-sm"  value="20" id="feedRateW`+i+`" objectseq="`+i+`">
+                <input type="number" class="form-control input-sm"  value="20" id="feedRateW`+i+`" objectseq="`+i+`" onchange="document.getElementById('feedRateB`+i+`').value=document.getElementById('feedRateW`+i+`').value">
                 <span class="input-group-addon">mm/s</span>
               </div><br>
               <div class="input-group">
@@ -262,11 +264,12 @@ function fillEasyCam() {
             </div>
             <div class="form-group">
               <label>Laser Power Constraints</label>
+              <BR />These should be the same, or there may be problems.
               <div class="input-group">
                 <span class="input-group-addon">Min</span>
-                <input type="number"  min="0" max="100" class="form-control input-sm" value="0" id="minpwr`+i+`" objectseq="`+i+`">
+                <input type="number"  min="0" max="100" class="form-control input-sm" value="0" id="minpwr`+i+`" objectseq="`+i+`" onchange="document.getElementById('maxpwr`+i+`').value=document.getElementById('minpwr`+i+`').value">
                 <span class="input-group-addon">Max</span>
-                <input type="number"  min="0" max="100" class="form-control input-sm" value="100" id="maxpwr`+i+`" objectseq="`+i+`">
+                <input type="number"  min="0" max="100" class="form-control input-sm" value="1" id="maxpwr`+i+`" objectseq="`+i+`">
                 <span class="input-group-addon">%</span>
               </div>
             </div>
